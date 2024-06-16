@@ -8,10 +8,18 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./hoc/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#2a62c0",
+        secondary: "#e6e6e6",
+        secondary2: "#67a5ea",
+        tertiary: "#151030",
+      },
+    },
   },
   plugins: [addVariablesForColors],
 };
