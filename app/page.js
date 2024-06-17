@@ -8,7 +8,7 @@ import WorkExperience from "@/components/WorkExperience";
 export default function Home() {
   return (
     <main className="relative bg-transparent w-full ">
-      <Nav />
+      {/* <Nav /> */}
       <Hero />
       <About />
       <Projects />

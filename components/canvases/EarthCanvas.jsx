@@ -1,10 +1,12 @@
 "use client";
-import React, { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useTexture } from "@react-three/drei";
 import CanvasLoader from "./CanvasLoader";
+import { motion } from "framer-motion-3d";
+import { useScroll, useTransform } from "framer-motion";
 
-const Earth = () => {
+const Earth = ({ scale }) => {
   const [colorMap, bumpMap, cloudMap] = useTexture([
     "./earthTexture/earthmap1k.jpg",
     "./earthTexture/earthbump1k.jpg",
@@ -13,7 +15,7 @@ const Earth = () => {
   return (
     <>
       <ambientLight intensity={1} color={0xffffff} />
-      <group scale={4.5}>
+      <motion.group scale={scale}>
         <mesh position={[0, 0, 0]}>
           <sphereGeometry args={[0.6, 32, 32]} />
           <meshPhongMaterial map={colorMap} />
@@ -22,15 +24,21 @@ const Earth = () => {
           <sphereGeometry args={[0.63, 32, 32]} />
           <meshPhongMaterial map={cloudMap} transparent={true} />
         </mesh>
-      </group>
+      </motion.group>
     </>
   );
 };
 
-const EarthCanvas = ({ id }) => {
+const EarthCanvas = () => {
+  const earthScene = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: earthScene,
+    offset: ["start end", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [4.5, 4, 3.5]);
   return (
     <Canvas
-      id={id}
+      ref={earthScene}
       className="overflow-visible"
       shadows
       frameloop="always"
@@ -50,7 +58,7 @@ const EarthCanvas = ({ id }) => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Earth />
+        <Earth scale={scale} />
 
         <Preload all />
       </Suspense>
