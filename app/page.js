@@ -1,18 +1,27 @@
 import About from "@/components/About";
+import { Provider } from "@/components/Context/Provider";
+import DemoProject from "@/components/DemoProject";
 
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import Projects from "@/components/Projects";
 import WorkExperience from "@/components/WorkExperience";
 
+import { navItems } from "@/components/data";
+import { FloatingNav } from "@/components/ui/FloatingNavbar";
+
 export default function Home() {
   return (
-    <main className="relative bg-transparent w-full ">
-      {/* <Nav /> */}
-      <Hero />
-      <About />
-      <Projects />
-      <WorkExperience />
-    </main>
+    <Provider>
+      <main className="relative bg-transparent w-full ">
+        {/* <Nav /> */}
+        <FloatingNav navItems={navItems} />
+        <Hero />
+        <About />
+        <DemoProject />
+        {/* <WorkExperience /> */}
+        {/* <Projects /> */}
+      </main>
+    </Provider>
   );
 }

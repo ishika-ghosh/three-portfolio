@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { namMenu } from "./data";
+import { navItems } from "./data";
 import { HoverBorderGradient } from "./ui/HoverBorderGradient";
 import { motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ function Nav() {
       transition={{ duration: 3 }}
     >
       <HoverBorderGradient>
-        {namMenu.map((menu) => (
+        {/* {namMenu.map((menu) => (
           <Link
             key={menu.name}
             href={menu.path}
@@ -22,7 +22,7 @@ function Nav() {
           >
             {menu.name}
           </Link>
-        ))}
+        ))} */}
       </HoverBorderGradient>
     </motion.div>
   );

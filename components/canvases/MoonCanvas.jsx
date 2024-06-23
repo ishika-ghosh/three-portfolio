@@ -18,11 +18,11 @@ function MoonCanvas() {
   ]);
   return (
     <Canvas ref={scene}>
-      <ambientLight intensity={0.3} />
+      <ambientLight intensity={0.3} color={"#b7ab98"} />
 
       <directionalLight intensity={2} position={[1, 0, -0.25]} />
 
-      <motion.mesh scale={3} rotation-y={scrollYProgress}>
+      <motion.mesh scale={2.7} rotation-y={scrollYProgress}>
         <sphereGeometry args={[1, 64, 64]} />
         <meshStandardMaterial map={color} normalMap={normal} aoMap={aoMap} />
       </motion.mesh>

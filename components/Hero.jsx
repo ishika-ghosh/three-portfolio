@@ -47,11 +47,11 @@ function Hero() {
       <motion.div
         ref={heroSection}
         style={{ opacity: divOpacity }}
-        className="fixed left-1/2 -translate-x-1/2 xl:mt-[200px] mt-[250px] z-10"
+        className="fixed top-0 left-0 w-full xl:mt-[200px] mt-[250px] z-10"
       >
         <motion.h1
           className={
-            "text-secondary md:text-4xl text-lg mb-2 flex flex-col items-center xl:flex-row xl:items-end"
+            "text-secondary md:text-5xl text-lg mb-2 mx-auto text-center mt-[2rem]"
           }
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -59,7 +59,9 @@ function Hero() {
         >
           Hi there! I'm{"  "}
           <span
-            className={"text_gradient md:text-6xl text-3xl ml-3 font-extrabold"}
+            className={
+              "text_gradient md:text-[5vw] text-3xl ml-3 font-extrabold"
+            }
           >
             Ishika Ghosh
           </span>
@@ -80,6 +82,9 @@ function Hero() {
         className="w-full z-[1] h-[200vh] fixed flex items-start justify-center top-0 left-0 overflow-visible"
       >
         <motion.div
+          initial={{ opacity: 0, marginTop: "100vh" }}
+          animate={{ opacity: 1, marginTop: "63vh" }}
+          transition={{ duration: 3 }}
           className="w-full z-[1] h-screen opacity-[1] align-center overflow-visible"
           style={{
             opacity: opacity,
