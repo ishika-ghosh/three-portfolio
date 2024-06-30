@@ -71,7 +71,7 @@ function Hero() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 3 }}
-          className="mx-auto text-center mt-7 text-secondary font-light md:text-lg text-xs"
+          className="mx-auto text-center mt-7 text-tertiary font-light md:text-lg text-xs"
         >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           <br /> Adipisci ducimus tempora tempore molestiae non ipsam

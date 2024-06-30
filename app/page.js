@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import { Provider } from "@/components/Context/Provider";
 import DemoProject from "@/components/DemoProject";
 
@@ -20,7 +21,7 @@ export default function Home() {
         <About />
         <WorkExperience />
         <DemoProject />
-        {/* <Projects /> */}
+        <Contact />
       </main>
     </Provider>
   );

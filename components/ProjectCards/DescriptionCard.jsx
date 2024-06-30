@@ -14,9 +14,7 @@ function DescriptionCard({ title, des, id }) {
   return (
     <div
       className={
-        isInView
-          ? colorClass + "text-secondary"
-          : colorClass + "text-[#383838] "
+        isInView ? colorClass + "text-tertiary" : colorClass + "text-[#383838] "
       }
       ref={targetDiv}
     >

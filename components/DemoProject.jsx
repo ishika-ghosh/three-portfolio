@@ -9,7 +9,7 @@ const DemoProject = () => {
     <div>
       <motion.h1
         className={
-          "text-secondary md:text-5xl text-lg mb-2 mx-auto text-center mt-[2rem]"
+          "text-secondary md:text-5xl text-lg mb-2 mx-auto text-center mt-[4rem]"
         }
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
