@@ -3,7 +3,6 @@ import SectionWrapper from "@/hoc/SectionWrapper";
 import { motion } from "framer-motion";
 import { projects } from "./data";
 import DescriptionCard from "./ProjectCards/DescriptionCard";
-import PhotoCard from "./ProjectCards/PhotoCard";
 
 const DemoProject = () => {
   return (
@@ -24,7 +23,7 @@ const DemoProject = () => {
         </span>
       </motion.h1>
       <div className="w-full flex mt-20 gap-20 items-start relative">
-        <div className="w-full py-[60vh]">
+        <div className="w-full py-[40vh]">
           <ul>
             {projects.map((project, i) => (
               <li key={project.id}>

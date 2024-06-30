@@ -1,89 +1,66 @@
 "use client";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
-
-import "react-vertical-timeline-component/style.min.css";
-
 import { experiences } from "./data";
 import { textVariant } from "@/utils/motion";
 import SectionWrapper from "./../hoc/SectionWrapper";
 import { Button } from "./ui/MovingBoeder";
-
-const ExperienceCard = ({ experience }) => {
-  return (
-    <VerticalTimelineElement
-      visible={true}
-      contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className="flex justify-center items-center w-full h-full visible">
-          {/* <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
-          /> */}
-        </div>
-      }
-    >
-      <Button
-        duration={Math.floor(Math.random() * 10000) + 10000}
-        borderRadius="1.75rem"
-        style={{
-          background: "rgb(4,7,29)",
-          backgroundColor:
-            "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-          borderRadius: `calc(1.75rem* 0.96)`,
-        }}
-        className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800 w-full h-full"
-      >
-        <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
-          {/* <img
-            src={card.thumbnail}
-            alt={card.thumbnail}
-            className="lg:w-32 md:w-20 w-16"
-          /> */}
-          <div className="lg:ms-5">
-            <h1 className="text-start text-xl md:text-2xl font-bold">
-              {experience.title}
-            </h1>
-            {/* <p className="text-start text-white-100 mt-3 font-semibold">
-              {card.desc}
-            </p> */}
-          </div>
-        </div>
-      </Button>
-    </VerticalTimelineElement>
-  );
-};
+import { Meteors } from "./ui/Meteors";
 
 const WorkExperience = () => {
   return (
     <>
-      <motion.h1 className="heading" variants={textVariant(0.25)}>
+      <motion.h1
+        className={
+          "text-secondary md:text-5xl text-lg mb-2 mx-auto text-center mt-[2rem]"
+        }
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2 }}
+      >
         What I have done so far{" "}
-        <span className="text_gradient">Work Experience.</span>
+        <span
+          className={"text_gradient md:text-[5vw] text-3xl ml-3 font-extrabold"}
+        >
+          Work Experience
+        </span>
       </motion.h1>
-
-      <div className="mt-20 flex flex-col">
-        <VerticalTimeline animate>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
+      <div className="mt-20 px-20">
+        {experiences.map((experience, i) => (
+          <ExperienceCard {...experience} i={i} key={i} />
+        ))}
       </div>
     </>
   );
 };
 
 export default SectionWrapper(WorkExperience, "work");
+const ExperienceCard = ({ title, i, company_name, date, points }) => {
+  return (
+    <motion.div
+      className={i % 2 ? "mt-[10rem] w-full lg:ml-[52%]" : "mt-[10rem] w-full"}
+      key={i}
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 2 }}
+    >
+      <div className=" w-[45%] relative">
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-800 to-teal-500 transform scale-[0.80] bg-tranparent rounded-full blur-3xl" />
+        <div className="relative shadow-xl bg-gray-950 border border-gray-900  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
+          <h1 className="font-bold text-2xl text-tertiary mb-2 relative z-50">
+            {title}
+          </h1>
+          <p className="flex w-full mb-2 items-center justify-between font-semibold text-lg text-tertiary">
+            <span>{company_name}</span>{" "}
+            <span className="font-light text-base">{date}</span>
+          </p>
+
+          <p className="font-light text-base text-secondary mb-4 relative z-50">
+            {points}
+          </p>
+
+          <Meteors number={20} />
+        </div>
+      </div>
+    </motion.div>
+  );
+};

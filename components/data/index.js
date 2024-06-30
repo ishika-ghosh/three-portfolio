@@ -9,7 +9,7 @@ import {
 
 export const navItems = [
   { name: "About", link: "#about" },
-  { name: "Experience", link: "#experience" },
+  { name: "Experience", link: "#work" },
   { name: "Projects", link: "#projects" },
   { name: "Contact", link: "#contact" },
 ];
@@ -20,7 +20,7 @@ export const projects = [
     des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
     card: FirstCard,
     link: "/ui.earth.com",
-    color: "#3532ea8c",
+    color: "#3532ea33",
   },
   {
     id: 2,
@@ -67,50 +67,30 @@ export const experiences = [
   {
     title: "React.js Developer",
     company_name: "Starbucks",
-    iconBg: "#383E56",
     date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    points:
+      "Developing and maintaining web applications using React.js and other related technologies. Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products Implementing responsive design and ensuring cross-browser compatibility.Participating in code reviews and providing constructive feedback to other developers.",
   },
   {
     title: "React Native Developer",
     company_name: "Tesla",
-    iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    points:
+      "Developing and maintaining web applications using React.js and other related technologies. Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products Implementing responsive design and ensuring cross-browser compatibility.Participating in code reviews and providing constructive feedback to other developers.",
   },
   {
     title: "Web Developer",
     company_name: "Shopify",
-    iconBg: "#383E56",
     date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    points:
+      "Developing and maintaining web applications using React.js and other related technologies. Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products Implementing responsive design and ensuring cross-browser compatibility.Participating in code reviews and providing constructive feedback to other developers.",
   },
   {
     title: "Full stack Developer",
     company_name: "Meta",
-    iconBg: "#E6DEDD",
     date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    points:
+      "Developing and maintaining web applications using React.js and other related technologies. Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products Implementing responsive design and ensuring cross-browser compatibility.Participating in code reviews and providing constructive feedback to other developers.",
   },
 ];
 export const data = [
@@ -121,8 +101,7 @@ export const data = [
     speed: 0.6,
   },
   {
-    title:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem dolorum saepe atque enim quo ducimus sunt sit. Unde provident, nesciunt assumenda dolores labore adipisci",
+    title: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. ",
     description:
       "Developed the Future of UFC Sports Ecosystem despite not being a sports fan.",
     speed: 0.6,

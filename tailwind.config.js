@@ -17,7 +17,20 @@ module.exports = {
         primary: "#2a62c0",
         secondary: "#b7ab98",
         secondary2: "#67a5ea",
-        tertiary: "#151030",
+        tertiary: "#ede6da",
+      },
+      animation: {
+        "meteor-effect": "meteor 5s linear infinite",
+      },
+      keyframes: {
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
       },
     },
   },

@@ -18,8 +18,8 @@ export default function Home() {
         <FloatingNav navItems={navItems} />
         <Hero />
         <About />
+        <WorkExperience />
         <DemoProject />
-        {/* <WorkExperience /> */}
         {/* <Projects /> */}
       </main>
     </Provider>

@@ -1,13 +1,18 @@
 "use client";
 import { useContext } from "react";
+import classNames from "classnames";
 import { Button } from "../ui/MovingBoeder";
 import { GlobalContext } from "../Context/Provider";
 
 function PhotoCard({ children, id, color }) {
   const { cardId } = useContext(GlobalContext);
   const classes = "absolute inset-0 h-full w-full transition-opacity";
-  const bgClasses =
-    "w-[200px] h-[200px] absolute -top-[30%] -right-[20%] -z-10 rounded-full blur-3xl";
+
+  const bgClasses = classNames({
+    "w-[200px] h-[200px] absolute -top-[30%] -right-[20%] -z-10 rounded-full blur-3xl opacity-0": true,
+    "opacity-100": cardId === id,
+  });
+
   return (
     <>
       <Button
@@ -23,13 +28,7 @@ function PhotoCard({ children, id, color }) {
       >
         {children}
       </Button>
-      <div
-        className={
-          cardId === id
-            ? bgClasses + ` bg-[${color}] opacity-100`
-            : bgClasses + " opacity-0"
-        }
-      ></div>
+      <div className={bgClasses} style={{ background: color }}></div>
     </>
   );
 }
