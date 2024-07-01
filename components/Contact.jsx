@@ -4,10 +4,23 @@ import { motion } from "framer-motion";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 const Alien = dynamic(() => import("./canvases/Alien"), {
   ssr: false,
 });
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <>
       <motion.h1
@@ -34,12 +47,18 @@ function Contact() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2 }}
         >
-          <form className="mt-8 flex flex-col gap-8 xl:ml-10">
+          <form
+            className="mt-8 flex flex-col gap-8 xl:ml-10"
+            onSubmit={handleSubmit}
+          >
             <label className="flex flex-col">
               <span className="text-tertiary font-medium mb-4">Your Name</span>
               <input
+                required
                 type="text"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="What's your good name?"
                 className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium w-[80%]"
               />
@@ -47,8 +66,11 @@ function Contact() {
             <label className="flex flex-col">
               <span className="text-tertiary font-medium mb-4">Your email</span>
               <input
+                required
                 type="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="What's your web address?"
                 className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium w-[80%]"
               />
@@ -58,8 +80,11 @@ function Contact() {
                 Your Message
               </span>
               <textarea
+                required
                 rows={5}
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="What you want to say?"
                 className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium w-[80%]"
               />
@@ -69,6 +94,7 @@ function Contact() {
               title={"Let's get in touch"}
               icon={<FaLocationArrow />}
               position="right"
+              type="submit"
             />
           </form>
         </motion.div>

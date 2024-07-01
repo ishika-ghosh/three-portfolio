@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const MagicButton = ({ title, icon, position, handleClick, otherClasses }) => {
+const MagicButton = ({
+  title,
+  icon,
+  position,
+  handleClick,
+  otherClasses,
+  type,
+}) => {
   return (
     <motion.button
       className="relative inline-flex h-12 w-full md:w-[13rem] md:mt-5 overflow-hidden rounded-lg p-[1px] focus:outline-none"
@@ -9,6 +16,7 @@ const MagicButton = ({ title, icon, position, handleClick, otherClasses }) => {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 3 }}
+      type={type}
     >
       <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
 
