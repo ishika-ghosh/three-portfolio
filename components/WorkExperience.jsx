@@ -49,7 +49,6 @@ const WorkExperience = () => {
       >
         <motion.div
           className="w-[45%] h-[50vh] mt-[15vh]"
-          variants={fadeIn("right", "swing", 0.25, 2)}
           style={{ marginLeft: marginLeft, marginTop: marginTop }}
         >
           <Astronaut />

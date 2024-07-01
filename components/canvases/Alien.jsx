@@ -6,30 +6,23 @@ import CanvasLoader from "./CanvasLoader";
 import { Float } from "@react-three/drei";
 
 export function Model() {
-  const astronaut = useGLTF("/little_astronaut.glb");
+  const alien = useGLTF("/alien.glb");
   return (
-    <primitive
-      object={astronaut.scene}
-      scale={3}
-      position-y={-7}
-      rotation-y={0}
-    />
+    <primitive object={alien.scene} scale={3} position-y={-0.7} rotation-y={0} />
   );
 }
 
 useGLTF.preload("/little_astronaut.glb");
 
-function Astronaut() {
+function Alien() {
   return (
     <Canvas>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableDamping
           enableZoom={false}
-          maxPolarAngle={Math.PI / 4}
-          minPolarAngle={Math.PI / 4}
-          maxAzimuthAngle={Math.PI / 5}
-          minAzimuthAngle={Math.PI / 10}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
         />
         <Float
           speed={2}
@@ -45,4 +38,4 @@ function Astronaut() {
   );
 }
 
-export default Astronaut;
+export default Alien;

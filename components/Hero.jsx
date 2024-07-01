@@ -2,8 +2,10 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import MagicButton from "./ui/MagicButton";
 import dynamic from "next/dynamic";
 import SectionWrapper from "./../hoc/SectionWrapper";
+import { FaLocationArrow } from "react-icons/fa6";
 
 const EarthCanvas = dynamic(() => import("./canvases/EarthCanvas"), {
   ssr: false,
@@ -34,7 +36,7 @@ function Hero() {
   const marginTop = useTransform(
     scrollYProgress,
     [0, 0.3, 0.5, 0.8],
-    ["65vh", "65vh", "25vh", "0vh"]
+    ["70vh", "70vh", "25vh", "0vh"]
   );
   const marginLeft = useTransform(
     scrollYProgress,
@@ -47,7 +49,7 @@ function Hero() {
       <motion.div
         ref={heroSection}
         style={{ opacity: divOpacity }}
-        className="fixed top-0 left-0 w-full xl:mt-[200px] mt-[250px] z-10"
+        className="fixed top-0 left-0 w-full xl:mt-[200px] mt-[160px] z-10 flex flex-col justify-center items-center"
       >
         <motion.h1
           className={
@@ -76,6 +78,11 @@ function Hero() {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           <br /> Adipisci ducimus tempora tempore molestiae non ipsam
         </motion.p>
+        <MagicButton
+          title="Show my work"
+          icon={<FaLocationArrow />}
+          position="right"
+        />
       </motion.div>
       <motion.div
         ref={target}
@@ -83,7 +90,7 @@ function Hero() {
       >
         <motion.div
           initial={{ opacity: 0, marginTop: "100vh" }}
-          animate={{ opacity: 1, marginTop: "63vh" }}
+          animate={{ opacity: 1, marginTop: "70vh" }}
           transition={{ duration: 3 }}
           className="w-full z-[1] h-screen opacity-[1] align-center overflow-visible"
           style={{

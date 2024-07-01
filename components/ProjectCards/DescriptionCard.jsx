@@ -2,6 +2,7 @@
 import { useInView } from "framer-motion";
 import { useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../Context/Provider";
+import { GoArrowUpRight } from "react-icons/go";
 function DescriptionCard({ title, des, id }) {
   const targetDiv = useRef(null);
   const isInView = useInView(targetDiv, { margin: "-50% 0px -50% 0px" });
@@ -11,6 +12,8 @@ function DescriptionCard({ title, des, id }) {
     if (!isInView && cardId === id) setCardId(null);
   }, [isInView, id, cardId]);
   const colorClass = "py-16 font-bold transition-colors ";
+  const borderClass =
+    "flex justify-center items-center border-[0.4px] px-3 py-2 rounded-lg cursor-pointer";
   return (
     <div
       className={
@@ -35,11 +38,21 @@ function DescriptionCard({ title, des, id }) {
                   ))} */}
         </div>
 
-        <div className="flex justify-center items-center">
-          <p className="flex lg:text-xl md:text-xs text-sm text-purple pr-2">
+        <div
+          className={
+            isInView
+              ? borderClass + " border-tertiary"
+              : borderClass + " border-[#383838]"
+          }
+        >
+          <p className="flex lg:text-lg md:text-xs text-sm text-purple pr-2 font-medium">
             Check Live Site
           </p>
-          {/* <FaLocationArrow className="ms-3" color="#CBACF9" /> */}
+          <GoArrowUpRight
+            className="ms-2"
+            color={isInView ? "#ede6da" : "#383838"}
+            size={24}
+          />
         </div>
       </div>
     </div>

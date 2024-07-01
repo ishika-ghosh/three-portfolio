@@ -10,8 +10,11 @@ import { useRef } from "react";
 import SectionWrapper from "./../hoc/SectionWrapper";
 import { data } from "./data";
 import dynamic from "next/dynamic";
-
+import { technologies } from "./data";
 const MoonCanvas = dynamic(() => import("./canvases/MoonCanvas"), {
+  ssr: false,
+});
+const BallCanvas = dynamic(() => import("./canvases/BallCanvas"), {
   ssr: false,
 });
 
@@ -50,6 +53,13 @@ const About = () => {
           </div>
         </div>
       </motion.div>
+      <div className="flex flex-row flex-wrap justify-center gap-10">
+        {technologies.map((technology) => (
+          <div className="w-28 h-28" key={technology.name}>
+            <BallCanvas icon={technology.icon} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -69,28 +79,23 @@ function Title({ data }) {
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
 
   return (
-    <div ref={container} className="relative z-20 ">
-      <div
-        className="inline-block pl-[10%] "
-        // onMouseOver={() => {
-        //   setSelectedProject(i);
-        // }}
-        // onMouseLeave={() => {
-        //   setSelectedProject(null);
-        // }}
-      >
-        <motion.p
-          style={{ clipPath: clip }}
-          className={
-            i === 0 ? "title text_gradient about-heading" : "title about-me"
-          }
-        >
-          {title}
-        </motion.p>
-        <p className={i == 0 ? "title about-heading" : "title about-me"}>
-          {title}
-        </p>
+    <>
+      <div ref={container} className="relative z-20 ">
+        <div className="inline-block pl-[10%] ">
+          <motion.p
+            style={{ clipPath: clip }}
+            className={
+              i === 0 ? "title text_gradient about-heading" : "title about-me"
+            }
+          >
+            {title}
+          </motion.p>
+          <p className={i == 0 ? "title about-heading" : "title about-me"}>
+            {title}
+          </p>
+        </div>
       </div>
-    </div>
+      
+    </>
   );
 }

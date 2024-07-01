@@ -23,7 +23,7 @@ const DemoProject = () => {
         </span>
       </motion.h1>
       <div className="w-full flex mt-20 gap-20 items-start relative">
-        <div className="w-full py-[40vh]">
+        <div className="w-full pt-[40vh] pb-[20vh]">
           <ul>
             {projects.map((project, i) => (
               <li key={project.id}>

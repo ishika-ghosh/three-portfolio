@@ -3,6 +3,7 @@ import { useContext } from "react";
 import classNames from "classnames";
 import { Button } from "../ui/MovingBoeder";
 import { GlobalContext } from "../Context/Provider";
+import { FaGithub } from "react-icons/fa";
 
 function PhotoCard({ children, id, color }) {
   const { cardId } = useContext(GlobalContext);
@@ -12,7 +13,10 @@ function PhotoCard({ children, id, color }) {
     "w-[200px] h-[200px] absolute -top-[30%] -right-[20%] -z-10 rounded-full blur-3xl opacity-0": true,
     "opacity-100": cardId === id,
   });
-
+  const iconClasses = classNames({
+    "absolute bottom-5 right-5 cursor-pointer opacity-0": true,
+    "opacity-100": cardId === id,
+  });
   return (
     <>
       <Button
@@ -28,7 +32,15 @@ function PhotoCard({ children, id, color }) {
       >
         {children}
       </Button>
-      <div className={bgClasses} style={{ background: color }}></div>
+      <div className={iconClasses}>
+        <a
+          href="https://react-icons.github.io/react-icons/search/#q=github"
+          target="_blank"
+        >
+          <FaGithub color={"white"} size={24} />
+        </a>
+      </div>
+      <div className={bgClasses} style={{ background: color }} />
     </>
   );
 }
