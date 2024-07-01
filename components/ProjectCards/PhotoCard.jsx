@@ -14,7 +14,7 @@ function PhotoCard({ children, id, color }) {
     "opacity-100": cardId === id,
   });
   const iconClasses = classNames({
-    "absolute bottom-5 right-5 cursor-pointer opacity-0": true,
+    "absolute bottom-5 right-5 cursor-pointer bg-black p-2 rounded-full opacity-0": true,
     "opacity-100": cardId === id,
   });
   return (
@@ -47,45 +47,69 @@ function PhotoCard({ children, id, color }) {
 
 export default PhotoCard;
 
-export const FirstCard = ({ id, color }) => {
+export const FirstCard = ({ id, color, imageUrl }) => {
   return (
     <PhotoCard id={id} color={color}>
-      First
+      <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden flex items-center justify-center">
+        <img
+          className="brightness-95 w-full h-full object-contain"
+          src={imageUrl}
+          alt="first"
+        />
+      </div>
     </PhotoCard>
   );
 };
-export const SecondCard = ({ id, color }) => {
+export const SecondCard = ({ id, color, imageUrl }) => {
   return (
     <PhotoCard id={id} color={color}>
-      Second
+      <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden flex items-center justify-center">
+        <img
+          className="brightness-95 w-full h-full object-contain "
+          src={imageUrl}
+          alt="first"
+        />
+      </div>
     </PhotoCard>
   );
 };
-export const ThirdCard = ({ id, color }) => {
+export const ThirdCard = ({ id, color, imageUrl }) => {
   return (
     <PhotoCard id={id} color={color}>
-      Third
+      <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden flex items-center justify-center">
+        <img
+          className="brightness-95 w-full h-full object-contain"
+          src={imageUrl}
+          alt="first"
+        />
+      </div>
     </PhotoCard>
   );
 };
-export const FourthCard = ({ id, color }) => {
+export const FourthCard = ({ id, color, imageUrl }) => {
   return (
     <PhotoCard id={id} color={color}>
-      Fourth
+      <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden ">
+        <img className="brightness-85" src={imageUrl} alt="first" />
+      </div>
     </PhotoCard>
   );
 };
-export const FifthCard = ({ id, color }) => {
+export const FifthCard = ({ id, color, imageUrl }) => {
   return (
     <PhotoCard id={id} color={color}>
-      Fifth
+      <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden ">
+        <img className="brightness-85" src={imageUrl} alt="first" />
+      </div>
     </PhotoCard>
   );
 };
-export const SixthCard = ({ id, color }) => {
+export const SixthCard = ({ id, color, imageUrl }) => {
   return (
     <PhotoCard id={id} color={color}>
-      Sixth
+      <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden ">
+        <img className="brightness-85" src={imageUrl} alt="first" />
+      </div>
     </PhotoCard>
   );
 };

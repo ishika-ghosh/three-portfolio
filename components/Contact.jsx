@@ -36,7 +36,7 @@ function Contact() {
         >
           <form className="mt-8 flex flex-col gap-8 xl:ml-10">
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your Name</span>
+              <span className="text-tertiary font-medium mb-4">Your Name</span>
               <input
                 type="text"
                 name="name"
@@ -45,7 +45,7 @@ function Contact() {
               />
             </label>
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your email</span>
+              <span className="text-tertiary font-medium mb-4">Your email</span>
               <input
                 type="email"
                 name="email"
@@ -54,7 +54,9 @@ function Contact() {
               />
             </label>
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your Message</span>
+              <span className="text-tertiary font-medium mb-4">
+                Your Message
+              </span>
               <textarea
                 rows={5}
                 name="message"
@@ -70,10 +72,7 @@ function Contact() {
             />
           </form>
         </motion.div>
-        <div
-          
-          className="relative basis-1/3 xl:h-auto md:h-[550px] h-[350px] xl:ml-[-10%]"
-        >
+        <div className="relative basis-1/3 xl:h-auto md:h-[550px] h-[350px] xl:ml-[-10%]">
           <Alien />
           <div className="absolute top-2 -right-10 text-lg text-center border-[0.5px] border-tertiary rounded-3xl p-5 text-tertiary">
             {" "}

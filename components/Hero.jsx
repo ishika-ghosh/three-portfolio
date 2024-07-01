@@ -65,7 +65,7 @@ function Hero() {
               "text_gradient md:text-[5vw] text-3xl ml-3 font-extrabold"
             }
           >
-            Ishika Ghosh
+            Purnadip Manna
           </span>
         </motion.h1>
 
@@ -75,8 +75,9 @@ function Hero() {
           transition={{ duration: 3 }}
           className="mx-auto text-center mt-7 text-tertiary font-light md:text-lg text-xs"
         >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          <br /> Adipisci ducimus tempora tempore molestiae non ipsam
+          I'm a Software Engineer based in Kolkata, India.
+          <br /> thrive on designing robust and scalable application
+          architectures,
         </motion.p>
         <MagicButton
           title="Show my work"

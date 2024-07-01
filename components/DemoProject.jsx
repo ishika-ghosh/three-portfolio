@@ -35,7 +35,12 @@ const DemoProject = () => {
         <div className="w-full sticky top-0 flex h-screen items-center">
           <div className="h-[50vh] w-[80%] mx-auto relative">
             {projects.map((project, i) => (
-              <project.card key={i} id={project.id} color={project.color} />
+              <project.card
+                key={i}
+                id={project.id}
+                color={project.color}
+                imageUrl={project.imageUrl}
+              />
             ))}
           </div>
         </div>

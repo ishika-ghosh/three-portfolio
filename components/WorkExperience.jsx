@@ -24,7 +24,7 @@ const WorkExperience = () => {
   const marginTop = useTransform(
     scrollYProgress,
     [0.25, 0.4, 0.6, 0.8],
-    ["15vh", "90vh", "160vh", "220vh"]
+    ["15vh", "75vh", "143vh", "200vh"]
   );
   return (
     <div className="relative overflow-x-hidden">
@@ -64,7 +64,7 @@ const WorkExperience = () => {
 };
 
 export default SectionWrapper(WorkExperience, "work");
-const ExperienceCard = ({ title, i, company_name, date, points }) => {
+const ExperienceCard = ({ title, i, company_name, date, points, tech }) => {
   return (
     <motion.div
       className={i % 2 ? "mt-[10rem] w-full lg:ml-[55%]" : "mt-[10rem] w-full"}
@@ -84,10 +84,19 @@ const ExperienceCard = ({ title, i, company_name, date, points }) => {
             <span className="font-light text-base">{date}</span>
           </p>
 
-          <p className="font-light text-base text-secondary mb-4 relative z-50">
+          <p className="font-light text-base text-secondary relative z-50 mt-2">
             {points}
           </p>
-
+          <div className="flex items-center md:gap-2 gap-4 flex-wrap mt-10">
+            {tech.map((tech, i) => (
+              <div
+                key={i}
+                className="cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 border-[0.2px] border-tertiary rounded-2xl px-3 py-2 text-tertiary"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
           <Meteors number={10} />
         </div>
       </div>
