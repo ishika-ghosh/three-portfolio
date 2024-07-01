@@ -59,7 +59,7 @@ function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 3 }}
         >
-          Hi there! I'm{"  "}
+          Hi there! I&apos;m{"  "}
           <span
             className={
               "text_gradient md:text-[5vw] text-3xl ml-3 font-extrabold"
@@ -75,7 +75,7 @@ function Hero() {
           transition={{ duration: 3 }}
           className="mx-auto text-center mt-7 text-tertiary font-light md:text-lg text-xs"
         >
-          I'm a Software Engineer based in Kolkata, India.
+          I&apos;m a Software Engineer based in Kolkata, India.
           <br /> thrive on designing robust and scalable application
           architectures,
         </motion.p>

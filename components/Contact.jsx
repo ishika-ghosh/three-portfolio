@@ -18,7 +18,7 @@ function Contact() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 2 }}
       >
-        Let's get{"  "}
+        Let&apos;s get{"  "}
         <span
           className={"text_gradient md:text-[5vw] text-3xl ml-3 font-extrabold"}
         >
