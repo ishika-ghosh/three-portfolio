@@ -49,7 +49,7 @@ function Hero() {
       <motion.div
         ref={heroSection}
         style={{ opacity: divOpacity }}
-        className="md:fixed top-0 left-0 w-full xl:mt-[200px] md:mt-[160px] mt-[20vh] z-10 flex flex-col justify-center items-center relative"
+        className="fixed top-0 left-0 w-full xl:mt-[200px] md:mt-[160px] mt-[30vh] z-10 flex flex-col justify-center items-center"
       >
         <motion.h1
           className={

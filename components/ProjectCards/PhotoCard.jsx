@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 
 function PhotoCard({ children, id, color }) {
   const { cardId } = useContext(GlobalContext);
-  const classes = "absolute inset-0 h-full w-full transition-opacity";
+  const classes = "absolute inset-0 h-full w-full transition-opacity opacity-0";
 
   const bgClasses = classNames({
     "w-[200px] h-[200px] absolute -top-[30%] -right-[20%] -z-10 rounded-full blur-3xl opacity-0": true,
@@ -26,7 +26,9 @@ function PhotoCard({ children, id, color }) {
           borderRadius: `calc(1.75rem* 0.96)`,
         }}
         containerClassName={
-          cardId === id ? classes + " opacity-100" : classes + " opacity-0"
+          cardId === id
+            ? classes + " md:opacity-100"
+            : classes + " md:opacity-0"
         }
         className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800 w-full h-full"
       >

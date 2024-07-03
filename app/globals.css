@@ -78,6 +78,9 @@ p {
     line-height: 7vw;
     font-size: 1rem;
   }
+  .display-hid {
+    opacity: 0;
+  }
 }
 @layer utilities {
   .text-balance {
