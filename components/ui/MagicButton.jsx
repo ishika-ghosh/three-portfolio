@@ -11,7 +11,7 @@ const MagicButton = ({
 }) => {
   return (
     <motion.button
-      className="relative inline-flex h-12 w-full md:w-[13rem] md:mt-5 overflow-hidden rounded-lg p-[1px] focus:outline-none"
+      className="relative inline-flex md:h-12 h-10 w-full md:w-[13rem] md:mt-5 overflow-hidden rounded-lg p-[1px] focus:outline-none"
       onClick={handleClick}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}

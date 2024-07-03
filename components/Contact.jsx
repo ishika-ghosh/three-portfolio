@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 import dynamic from "next/dynamic";
+import axios from "axios";
 import { useState } from "react";
 const Alien = dynamic(() => import("./canvases/Alien"), {
   ssr: false,
@@ -14,12 +15,31 @@ function Contact() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+    try {
+      setLoading(true);
+      const { data } = await axios.post(
+        "https://portfolio-backend-ishika-ghosh.vercel.app/",
+        formData
+      );
+      console.log(data);
+      alert(data);
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.log(error);
+      alert("Some Thing went wrong");
+    }
+    setLoading(false);
   };
   return (
     <>
@@ -39,10 +59,10 @@ function Contact() {
         </span>
       </motion.h1>
       <div
-        className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+        className={`xl:mt-12 flex xl:flex-row flex-col-reverse lg:gap-10 overflow-hidden`}
       >
         <motion.div
-          className="basis-2/3 py-8 px-10 rounded-2xl"
+          className="basis-2/3 py-8 md:px-10 px-3 rounded-2xl"
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2 }}
@@ -60,7 +80,7 @@ function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="What's your good name?"
-                className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium w-[80%]"
+                className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium lg:w-[80%] w-full"
               />
             </label>
             <label className="flex flex-col">
@@ -72,7 +92,7 @@ function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="What's your web address?"
-                className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium w-[80%]"
+                className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium lg:w-[80%] w-full"
               />
             </label>
             <label className="flex flex-col">
@@ -86,25 +106,20 @@ function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="What you want to say?"
-                className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium w-[80%]"
+                className="bg-[#1e243e] py-4 px-6 placeholder:text-tertiary text-white rounded-lg outline-none border-none font-medium lg:w-[80%] w-full"
               />
             </label>
 
             <MagicButton
-              title={"Let's get in touch"}
-              icon={<FaLocationArrow />}
+              title={loading ? "Sending..." : "Let's get in touch"}
+              icon={!loading && <FaLocationArrow />}
               position="right"
               type="submit"
             />
           </form>
         </motion.div>
-        <div className="relative basis-1/3 xl:h-auto md:h-[550px] h-[350px] xl:ml-[-10%]">
+        <div className="relative lg:basis-1/3 xl:h-auto md:h-[550px] h-[350px] xl:ml-[-10%]">
           <Alien />
-          <div className="absolute top-2 -right-10 text-lg text-center border-[0.5px] border-tertiary rounded-3xl p-5 text-tertiary">
-            {" "}
-            Ready to take your digital <br />
-            journey to the next level?
-          </div>
         </div>
       </div>
     </>

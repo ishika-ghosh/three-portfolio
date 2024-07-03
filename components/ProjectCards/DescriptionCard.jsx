@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 import { useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../Context/Provider";
 import { GoArrowUpRight } from "react-icons/go";
-function DescriptionCard({ title, des, id, iconLists }) {
+function DescriptionCard({ title, des, id, iconLists, imageUrl }) {
   const targetDiv = useRef(null);
   const isInView = useInView(targetDiv, { margin: "-50% 0px -50% 0px" });
   const { setCardId, cardId } = useContext(GlobalContext);
@@ -11,7 +11,7 @@ function DescriptionCard({ title, des, id, iconLists }) {
     if (isInView) setCardId(id);
     if (!isInView && cardId === id) setCardId(null);
   }, [isInView, id, cardId]);
-  const colorClass = "py-16 font-bold transition-colors ";
+  const colorClass = "md:ml-0 ml-10 py-16 font-bold transition-colors ";
   const borderClass =
     "flex justify-center items-center border-[0.4px] px-3 py-2 rounded-lg cursor-pointer";
   return (
@@ -21,9 +21,12 @@ function DescriptionCard({ title, des, id, iconLists }) {
       }
       ref={targetDiv}
     >
-      <p className="text-4xl ">{title}</p>
-      <p className="mt-5 pr-10 font-thin ">{des}</p>
-      <div className="flex items-center justify-between mt-7 mb-3 mr-2 pr-10">
+      <div className="md:hidden flex items-center justify-center mb-10">
+        <img src={imageUrl} alt={id} className="w-full h-auto object-contain" />
+      </div>
+      <p className="md:text-4xl text-2xl ">{title}</p>
+      <p className="mt-5 md:pr-10 font-thin ">{des}</p>
+      <div className="flex items-center justify-between mt-7 mb-3 mr-2 md:pr-10">
         <div
           className={
             !isInView
@@ -51,7 +54,7 @@ function DescriptionCard({ title, des, id, iconLists }) {
               : borderClass + " border-[#383838]"
           }
         >
-          <p className="flex lg:text-lg md:text-xs text-sm text-purple pr-2 font-medium">
+          <p className="flex lg:text-lg md:text-xs text-[9px] text-purple pr-2 font-medium">
             Check Live Site
           </p>
           <GoArrowUpRight

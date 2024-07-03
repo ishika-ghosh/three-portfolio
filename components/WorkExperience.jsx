@@ -44,7 +44,7 @@ const WorkExperience = () => {
         </span>
       </motion.h1>
       <motion.div
-        className="absolute h-full bg-transparent w-full top-25 left-0"
+        className="absolute h-full bg-transparent w-full top-25 left-0 lg:block hidden"
         ref={experience}
       >
         <motion.div
@@ -54,7 +54,7 @@ const WorkExperience = () => {
           <Astronaut />
         </motion.div>
       </motion.div>
-      <div className="mt-20 px-20">
+      <div className="md:mt-20 mt-10 lg:px-20 px-3">
         {experiences.map((experience, i) => (
           <ExperienceCard {...experience} i={i} key={i} />
         ))}
@@ -67,31 +67,35 @@ export default SectionWrapper(WorkExperience, "work");
 const ExperienceCard = ({ title, i, company_name, date, points, tech }) => {
   return (
     <motion.div
-      className={i % 2 ? "mt-[10rem] w-full lg:ml-[55%]" : "mt-[10rem] w-full"}
+      className={
+        i % 2
+          ? "md:mt-[10rem] mt-[5rem] w-full lg:ml-[55%]"
+          : "md:mt-[10rem] mt-[5rem] w-full"
+      }
       key={i}
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 2 }}
     >
-      <div className=" w-[45%] relative">
+      <div className=" lg:w-[45%] md:w-full relative">
         <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-800 to-teal-500 transform scale-[0.80] bg-tranparent rounded-full blur-3xl" />
-        <div className="relative shadow-xl bg-gray-950 border border-gray-900 px-10 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
-          <h1 className="font-bold text-2xl text-tertiary mb-2 relative z-50">
+        <div className="relative shadow-xl bg-gray-950 border border-gray-900 md:px-10 px-3 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
+          <h1 className="font-bold md:text-2xl text-xl text-tertiary mb-2 relative z-50">
             {title}
           </h1>
-          <p className="flex w-full mb-2 items-center justify-between font-semibold text-lg text-tertiary">
+          <p className="flex md:flex-row flex-col w-full mb-2 md:items-center md:justify-between md:font-semibold font-light md:text-lg text-sm text-tertiary">
             <span>{company_name}</span>{" "}
-            <span className="font-light text-base">{date}</span>
+            <span className="font-light md:text-base text-xs">{date}</span>
           </p>
 
           <p className="font-light text-base text-secondary relative z-50 mt-2">
             {points}
           </p>
-          <div className="flex items-center md:gap-2 gap-4 flex-wrap mt-10">
+          <div className="flex items-center md:gap-2 gap-4 flex-wrap md:mt-10 mt-5">
             {tech.map((tech, i) => (
               <div
                 key={i}
-                className="cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 border-[0.2px] border-tertiary rounded-2xl px-3 py-2 text-tertiary"
+                className="cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 border-[0.2px] border-tertiary rounded-2xl md:px-3 py-2 px-2 text-tertiary text-xs md:text-md"
               >
                 {tech}
               </div>

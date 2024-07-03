@@ -69,6 +69,16 @@ p {
   font-size: 1.5rem;
   line-height: 3vw;
 }
+@media (max-width: 600px) {
+  .about-heading {
+    line-height: 5rem;
+    font-size: 2rem;
+  }
+  .about-me {
+    line-height: 7vw;
+    font-size: 1rem;
+  }
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

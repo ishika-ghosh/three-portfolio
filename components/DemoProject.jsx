@@ -23,7 +23,7 @@ const DemoProject = () => {
         </span>
       </motion.h1>
       <div className="w-full flex mt-20 gap-20 items-start relative">
-        <div className="w-full pt-[40vh] pb-[20vh]">
+        <div className="md:w-full w-[150%] md:pt-[40vh] pb-[20vh]">
           <ul>
             {projects.map((project, i) => (
               <li key={project.id}>
@@ -32,7 +32,7 @@ const DemoProject = () => {
             ))}
           </ul>
         </div>
-        <div className="w-full sticky top-0 flex h-screen items-center">
+        <div className="w-full sticky top-0 h-screen items-center flex">
           <div className="h-[50vh] w-[80%] mx-auto relative">
             {projects.map((project, i) => (
               <project.card

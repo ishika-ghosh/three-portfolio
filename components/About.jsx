@@ -34,10 +34,12 @@ const About = () => {
     <div id="about" className="h-auto w-full relative">
       <motion.div
         ref={target1}
-        className="w-full h-screen opacity-0 mt-[5vh] ml-[-20%] relative flex items-center justify-center"
+        className="w-full md:h-screen h-[120vh] opacity-0 md:mt-[5vh] mt-0 ml-[-20%] relative flex items-center justify-center"
         style={{ opacity: opacity, marginLeft: marginLeft }}
       >
-        <MoonCanvas />
+        <div className="md:flex hidden h-full w-full">
+          <MoonCanvas />
+        </div>
         <div className="absolute z-10 w-full top-20 left-0 brightness-90">
           <div className="w-full ">
             {data.map((project, i) => {
@@ -53,7 +55,19 @@ const About = () => {
           </div>
         </div>
       </motion.div>
-      <div className="flex flex-row flex-wrap justify-center gap-10">
+      <motion.h1
+        className={
+          "text-secondary md:text-5xl text-lg mx-auto text-center mt-[4rem]"
+        }
+      >
+        Know about{"  "}
+        <span
+          className={"text_gradient md:text-[5vw] text-3xl ml-3 font-extrabold"}
+        >
+          My Skills
+        </span>
+      </motion.h1>
+      <div className="flex flex-row flex-wrap justify-center gap-10 mt-20">
         {technologies.map((technology) => (
           <div className="w-28 h-28" key={technology.name}>
             <BallCanvas icon={technology.icon} />
@@ -81,7 +95,7 @@ function Title({ data }) {
   return (
     <>
       <div ref={container} className="relative z-20 ">
-        <div className="inline-block pl-[10%] ">
+        <div className="inline-block md:pl-[10%] pl-0">
           <motion.p
             style={{ clipPath: clip }}
             className={
@@ -95,7 +109,6 @@ function Title({ data }) {
           </p>
         </div>
       </div>
-      
     </>
   );
 }
