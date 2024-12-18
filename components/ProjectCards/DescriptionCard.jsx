@@ -3,7 +3,16 @@ import { useInView } from "framer-motion";
 import { useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../Context/Provider";
 import { GoArrowUpRight } from "react-icons/go";
-function DescriptionCard({ title, des, id, iconLists, imageUrl }) {
+import { FaGithub } from "react-icons/fa";
+function DescriptionCard({
+  title,
+  des,
+  id,
+  iconLists,
+  imageUrl,
+  github,
+  link,
+}) {
   const targetDiv = useRef(null);
   const isInView = useInView(targetDiv, { margin: "-50% 0px -50% 0px" });
   const { setCardId, cardId } = useContext(GlobalContext);
@@ -46,22 +55,30 @@ function DescriptionCard({ title, des, id, iconLists, imageUrl }) {
             </div>
           ))}
         </div>
-
-        <div
-          className={
-            isInView
-              ? borderClass + " border-tertiary"
-              : borderClass + " border-[#383838]"
-          }
-        >
-          <p className="flex lg:text-lg md:text-xs text-[9px] text-purple pr-2 font-medium">
-            Check Live Site
-          </p>
-          <GoArrowUpRight
-            className="ms-2"
-            color={isInView ? "#ede6da" : "#383838"}
-            size={24}
-          />
+        <div className="flex gap-4">
+          <div className={isInView ? "bg-black p-2 rounded-full" : "hidden"}>
+            <a href={github} target="_blank">
+              <FaGithub color={"white"} size={24} />
+            </a>
+          </div>
+          <div
+            className={
+              isInView
+                ? borderClass + " border-tertiary"
+                : borderClass + " border-[#383838]"
+            }
+          >
+            <a href={link} target="_blank" className="flex">
+              <p className="flex lg:text-lg md:text-xs text-[9px] text-purple pr-2 font-medium">
+                Check Live Site
+              </p>
+              <GoArrowUpRight
+                className="ms-2"
+                color={isInView ? "#ede6da" : "#383838"}
+                size={24}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

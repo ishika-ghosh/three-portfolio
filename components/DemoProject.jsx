@@ -40,6 +40,7 @@ const DemoProject = () => {
                 id={project.id}
                 color={project.color}
                 imageUrl={project.imageUrl}
+                gitHubLink={project.github}
               />
             ))}
           </div>

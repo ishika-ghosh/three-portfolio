@@ -33,7 +33,7 @@ const Stars = (props) => {
 const StarCanvas = () => {
   return (
     <div
-      className="w-full inset-0 z-[-1] fixed top-0 left-0 h-screen bg-[#030014]"
+      className="w-full inset-0 z-[-1] fixed top-0 left-0 h-screen bg-[#030014] hidden md:block"
       // style={{ height: "100vh", position: "fixed", top: "0px", left: "0px" }}
     >
       <Canvas camera={{ position: [0, 0, 1] }}>

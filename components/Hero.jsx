@@ -79,7 +79,7 @@ function Hero() {
           <br /> thrive on designing robust and scalable application
           architectures,
         </motion.p>
-        <a href="#work">
+        <a href="#projects">
           <MagicButton
             title="Show my work"
             icon={<FaLocationArrow />}

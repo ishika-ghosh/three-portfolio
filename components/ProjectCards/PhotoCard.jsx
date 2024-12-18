@@ -3,9 +3,8 @@ import { useContext } from "react";
 import classNames from "classnames";
 import { Button } from "../ui/MovingBoeder";
 import { GlobalContext } from "../Context/Provider";
-import { FaGithub } from "react-icons/fa";
 
-function PhotoCard({ children, id, color }) {
+function PhotoCard({ children, id, color, gitLink }) {
   const { cardId } = useContext(GlobalContext);
   const classes = "absolute inset-0 h-full w-full transition-opacity opacity-0";
 
@@ -34,14 +33,7 @@ function PhotoCard({ children, id, color }) {
       >
         {children}
       </Button>
-      <div className={iconClasses}>
-        <a
-          href="https://react-icons.github.io/react-icons/search/#q=github"
-          target="_blank"
-        >
-          <FaGithub color={"white"} size={24} />
-        </a>
-      </div>
+
       <div className={bgClasses} style={{ background: color }} />
     </>
   );
@@ -49,9 +41,9 @@ function PhotoCard({ children, id, color }) {
 
 export default PhotoCard;
 
-export const FirstCard = ({ id, color, imageUrl }) => {
+export const FirstCard = ({ id, color, imageUrl, gitHubLink }) => {
   return (
-    <PhotoCard id={id} color={color}>
+    <PhotoCard id={id} color={color} gitLink={gitHubLink}>
       <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden flex items-center justify-center">
         <img
           className="brightness-95 w-full h-full object-contain"
@@ -62,9 +54,9 @@ export const FirstCard = ({ id, color, imageUrl }) => {
     </PhotoCard>
   );
 };
-export const SecondCard = ({ id, color, imageUrl }) => {
+export const SecondCard = ({ id, color, imageUrl, gitHubLink }) => {
   return (
-    <PhotoCard id={id} color={color}>
+    <PhotoCard id={id} color={color} gitLink={gitHubLink}>
       <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden flex items-center justify-center">
         <img
           className="brightness-95 w-full h-full object-contain "
@@ -75,9 +67,9 @@ export const SecondCard = ({ id, color, imageUrl }) => {
     </PhotoCard>
   );
 };
-export const ThirdCard = ({ id, color, imageUrl }) => {
+export const ThirdCard = ({ id, color, imageUrl, gitHubLink }) => {
   return (
-    <PhotoCard id={id} color={color}>
+    <PhotoCard id={id} color={color} gitLink={gitHubLink}>
       <div className="w-[95%] h-[95%] rounded-3xl overflow-hidden flex items-center justify-center">
         <img
           className="brightness-95 w-full h-full object-contain"

@@ -12,40 +12,52 @@ import { FaTwitter } from "react-icons/fa6";
 
 export const navItems = [
   { name: "About", link: "#about" },
-  { name: "Experience", link: "#work" },
+  // { name: "Experience", link: "#work" },
   { name: "Projects", link: "#projects" },
   { name: "Contact", link: "#contact" },
 ];
 export const projects = [
   {
     id: 1,
-    title: "LMS- SaaS platform",
-    des: "A multitetant SaaS platform to manage learning materials for various institutions.A multitetant SaaS platform to manage learning materials for various institutions.",
+    title: "TreasuredTales",
+    des: "TreasuredTales is a captivating web app designed to help you store, share, and cherish your most treasured memories and stories with others. With TreasuredTales, you can create a virtual space where you can store your memories, whether it's a heartwarming anecdote, a significant milestone, or a memorable adventure.",
     card: FirstCard,
-    link: "/ui.earth.com",
+    link: "https://github.com/ishika-ghosh/TreasuredTales",
+    github: "https://github.com/ishika-ghosh/TreasuredTales",
     color: "#3532ea33",
-    imageUrl: "https://purnadip-manna.github.io/img/lms.png",
-    iconLists: ["./re.svg", "./re.svg", "./re.svg"],
+    imageUrl: "./app-image.png",
+    iconLists: [
+      "./re.svg",
+      "./tech/express.svg",
+      "./tech/mongodb.png",
+      "./tech/redux.png",
+    ],
   },
   {
     id: 2,
-    title: "TrackExp",
-    des: "An application to track daily expenses and analysis your expenses.",
+    title: "BrainRush 2K24",
+    des: "A web-based platform designed to streamline the organization and management of offline events with an integrated quiz portal.It provides essential features such as user registration, Google authentication, hall ticket generation, offline payment processing, and event management. It also includes an admin portal for event coordination and logistics.Led the team, brainstormed ideas, and worked on frontend and backend guiding other members.The platform had almost 450 users at the time of the event.",
     card: SecondCard,
-    link: "/ui.yoom.com",
+    link: "https://brainrushtest.vercel.app/",
+    github: "https://github.com/ishika-ghosh/brainrush-2k24-test",
     color: "#d138f737",
-    imageUrl: "https://purnadip-manna.github.io/img/trackexp.png",
-    iconLists: ["./re.svg", "./re.svg", "./re.svg"],
+    imageUrl: "./brainrush.png",
+    iconLists: ["./tech/next.svg", "./tech/redux.png", , "./tech/mongodb.png"],
   },
   {
     id: 3,
-    title: "MRBS- Meeting Room Booking System",
-    des: "A meeting room booking system for an organization to book their meeting rooms.",
+    title: "MoneyMate",
+    des: "An Expense Tracking App with Shared Budget makes managing group and personal finances effortless. It tracks shared expenses, calculates contributions, and resolves balances while offering personal expense tracking with insightful statistics and trends for complete financial clarity.",
     card: ThirdCard,
-    link: "/ui.aiimg.com",
+    link: "https://expo.dev/artifacts/eas/cqewf9UyXzeKnivGXMkuM6.apk",
+    github: "https://github.com/ishika-ghosh/moneymate_frontend",
     color: "#f7389437",
-    imageUrl: "https://purnadip-manna.github.io/img/mrbs.png",
-    iconLists: ["./re.svg", "./re.svg", "./re.svg"],
+    imageUrl: "./moneymate.png",
+    iconLists: [
+      "./tech/native.svg",
+      "./tech/express.svg",
+      "./tech/mongodb.png",
+    ],
   },
   // {
   //   id: 4,
@@ -114,21 +126,21 @@ export const data = [
     speed: 0.6,
   },
   {
-    title: "My name is Purnadip Manna. I am a Software Engineer at ",
+    title: "My name is Ishika Ghsoh. I am a Btech Computer Science ",
     speed: 0.8,
   },
   {
     title:
-      "GeoTech Infoservices Private Limited. I am from Howrah, West Bengal, India. ",
+      "Graduate from MCKV Institute of Engineering. I am from Howrah, West Bengal, India. ",
     speed: 0.7,
   },
   {
-    title: "I have completed my B.Tech (in Computer Science & Engineering)",
+    title: "I am also a freelancer",
     speed: 0.8,
   },
   {
     title:
-      "in 2023 from Techno International New Town, Kolkata.I'm a software engineer who loves bringing ideas to life by building applications from",
+      "with the experience of building real client projects.I'm a software engineer who loves bringing ideas to life by building applications from",
     speed: 0.9,
   },
   {
@@ -146,14 +158,12 @@ export const socialMedia = [
   {
     id: 1,
     icon: LuGithub,
+    link: "https://github.com/ishika-ghosh",
   },
   {
     id: 2,
     icon: FaLinkedinIn,
-  },
-  {
-    id: 3,
-    icon: FaTwitter,
+    link: "https://www.linkedin.com/in/ishika-ghosh20112002/",
   },
 ];
 export const technologies = [
@@ -177,6 +187,7 @@ export const technologies = [
     name: "React JS",
     icon: "./tech/reactjs.png",
   },
+
   {
     name: "Redux Toolkit",
     icon: "./tech/redux.png",
