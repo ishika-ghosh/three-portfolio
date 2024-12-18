@@ -65,7 +65,7 @@ function Hero() {
               "text_gradient md:text-[5vw] text-3xl ml-3 font-extrabold"
             }
           >
-            Purnadip Manna
+            Ishika Ghosh
           </span>
         </motion.h1>
 
