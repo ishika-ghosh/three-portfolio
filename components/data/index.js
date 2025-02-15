@@ -49,7 +49,7 @@ export const projects = [
     title: "MoneyMate",
     des: "An Expense Tracking App with Shared Budget makes managing group and personal finances effortless. It tracks shared expenses, calculates contributions, and resolves balances while offering personal expense tracking with insightful statistics and trends for complete financial clarity.",
     card: ThirdCard,
-    link: "https://expo.dev/artifacts/eas/cqewf9UyXzeKnivGXMkuM6.apk",
+    link: "https://expo.dev/artifacts/eas/myMx6aaGKsjMbVNPeP8NGq.apk",
     github: "https://github.com/ishika-ghosh/moneymate_frontend",
     color: "#f7389437",
     imageUrl: "./moneymate.png",
