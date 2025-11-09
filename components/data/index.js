@@ -12,7 +12,7 @@ import { FaTwitter } from "react-icons/fa6";
 
 export const navItems = [
   { name: "About", link: "#about" },
-  // { name: "Experience", link: "#work" },
+  { name: "Experience", link: "#work" },
   { name: "Projects", link: "#projects" },
   { name: "Contact", link: "#contact" },
 ];
@@ -59,36 +59,6 @@ export const projects = [
       "./tech/mongodb.png",
     ],
   },
-  // {
-  //   id: 4,
-  //   title: "Animated Apple Iphone 3D Website",
-  //   des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-  //   card: FourthCard,
-  //   link: "/ui.apple.com",
-  //   color: "#38c1f737",
-  //   imageUrl:
-  //     "https://images.unsplash.com/photo-1517476417305-21d49f984355?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTg0MzUzM3w&ixlib=rb-4.0.3&q=85&w=2160",
-  // },
-  // {
-  //   id: 5,
-  //   title: "Animated Apple Iphone 3D Website",
-  //   des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-  //   card: FifthCard,
-  //   link: "/ui.apple.com",
-  //   color: "#38f73e37",
-  //   imageUrl:
-  //     "https://images.unsplash.com/photo-1517476417305-21d49f984355?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTg0MzUzM3w&ixlib=rb-4.0.3&q=85&w=2160",
-  // },
-  // {
-  //   id: 6,
-  //   title: "Animated Apple Iphone 3D Website",
-  //   des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-  //   card: SixthCard,
-  //   link: "/ui.apple.com",
-  //   color: "#fb772b37",
-  //   imageUrl:
-  //     "https://images.unsplash.com/photo-1517476417305-21d49f984355?ixid=M3wxMTI1OHwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTg0MzUzM3w&ixlib=rb-4.0.3&q=85&w=2160",
-  // },
 ];
 export const experiences = [
   {
@@ -105,20 +75,6 @@ export const experiences = [
     points: "Developing and maintaining web applications using React.js ",
     tech: ["Python", "FAST API", "Salesforce API"],
   },
-  {
-    title: "Software Engineer Intern",
-    company_name: "GeoTech Infoservices Pvt Ltd. (Kolkata, India)",
-    date: "Jan 2023 - Jun 2023",
-    points: "Developing and maintaining web applications using React.js ",
-    tech: ["Java", "SpringBoot", "React", " AWS"],
-  },
-  {
-    title: "Software Engineer",
-    company_name: "GeoTech Infoservices Pvt Ltd. ",
-    date: "Apr 2024 - Present",
-    points: "Developing and maintaining web applications using React.js ",
-    tech: ["Microservice", "GRPC", "Rabbit MQ ", "REST API"],
-  },
 ];
 export const data = [
   {
@@ -126,32 +82,28 @@ export const data = [
     speed: 0.6,
   },
   {
-    title: "My name is Ishika Ghsoh. I am a Btech Computer Science ",
+    title: "I’m a software engineer at Tata Consultancy Services (TCS), ",
     speed: 0.8,
   },
   {
     title:
-      "Graduate from MCKV Institute of Engineering. I am from Howrah, West Bengal, India. ",
+      "where I work on designing and developing scalable enterprise solutions.I’m passionate about writing clean, efficient code and tackling complex backend challenges. ",
     speed: 0.7,
   },
   {
-    title: "I am also a freelancer",
+    title:
+      "My experience spans file processing, validation frameworks, and system integration for large-scale applications.I enjoy learning new technologies and improving the reliability and performance of the systems I build.",
     speed: 0.8,
   },
   {
     title:
-      "with the experience of building real client projects.I'm a software engineer who loves bringing ideas to life by building applications from",
+      "Beyond coding, I value collaboration, continuous growth, and creating solutions that make a meaningful impact.",
     speed: 0.9,
   },
   {
     title:
-      " scratch.I find it rewarding to design strong foundations for these applications, making them efficient and adaptable as they grow. ",
-    speed: 0.9,
-  },
-  {
-    title:
-      "I write clear, well-organized code that's easy for everyone to understand, including myself and my teammates. ",
-    speed: 1,
+      "I take pride in delivering high-quality work that blends technical precision with real-world usability.Outside of work, I love exploring new ideas, upskilling myself, and contributing to projects that inspire innovation.",
+    speed: 1.0,
   },
 ];
 export const socialMedia = [

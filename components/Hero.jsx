@@ -65,7 +65,7 @@ function Hero() {
               "text_gradient md:text-[5vw] text-3xl ml-3 font-extrabold"
             }
           >
-            Ishika Ghosh
+            Ishika
           </span>
         </motion.h1>
 
@@ -75,9 +75,9 @@ function Hero() {
           transition={{ duration: 3 }}
           className="mx-auto text-center mt-7 text-tertiary md:font-light md:text-lg text-xs md:mb-0 mb-5 font-extralight"
         >
-          I&apos;m a Software Engineer based in Kolkata, India.
-          <br /> thrive on designing robust and scalable application
-          architectures,
+          Software engineer passionate about building efficient, reliable, and
+          <br />
+          scalable solutions for complex real-world problems.
         </motion.p>
         <a href="#projects">
           <MagicButton

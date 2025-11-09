@@ -18,13 +18,13 @@ const WorkExperience = () => {
   });
   const marginLeft = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.4, 0.6, 0.8, 1],
-    ["100%", "55%", "0%", "55%", "0%", "0%"]
+    [0.4, 0.5, 0.8],
+    ["50%", "0%", "-10%"]
   );
   const marginTop = useTransform(
     scrollYProgress,
-    [0.25, 0.4, 0.6, 0.8],
-    ["15vh", "75vh", "143vh", "200vh"]
+    [0.4, 0.5, 0.8],
+    ["10vh", "60vh", "100vh"]
   );
   return (
     <div className="relative overflow-x-hidden">
@@ -50,6 +50,7 @@ const WorkExperience = () => {
         <motion.div
           className="w-[45%] h-[50vh] mt-[15vh]"
           style={{ marginLeft: marginLeft, marginTop: marginTop }}
+          // marginTop:marginTop
         >
           <Astronaut />
         </motion.div>
