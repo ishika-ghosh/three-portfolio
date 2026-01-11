@@ -62,18 +62,19 @@ export const projects = [
 ];
 export const experiences = [
   {
-    title: "Technical Intern",
-    company_name: "Tutoraj (Tamil Nadu, India)",
-    date: "Sep 2020 - Nov 2020",
-    points: "Developing and maintaining web applications using React.js ",
-    tech: ["MySql", "PHP", "Wordpress", "Javascript"],
+    title: "Jr Software Developer Intern",
+    company_name: "ATOMOS Technologies",
+    date: "Jul 2024 - Dec 2024",
+    points: "Developing and maintaining web applications using Next.js ",
+    tech: ["Postgres SQL", "Next JS", "API"],
   },
   {
-    title: "Backend Developer",
-    company_name: "SwiftSku (California, United States)",
-    date: "Jul 2022 - Sep 2022",
-    points: "Developing and maintaining web applications using React.js ",
-    tech: ["Python", "FAST API", "Salesforce API"],
+    title: "System Engineer",
+    company_name: "Tata Consultancy Services (TCS)",
+    date: "Mar 2024 - Present",
+    points:
+      "Part of the NSDL project at TCS, involved in development and validation of the CA/ACA module with a focus on secure transaction processing and regulatory compliance. ",
+    tech: ["JAVA", "Spring"],
   },
 ];
 export const data = [
